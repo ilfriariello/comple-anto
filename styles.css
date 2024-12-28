@@ -61,10 +61,22 @@ body {
     transition: opacity 2s ease-in; /* Transizione di 2 secondi */
 }
 
-/* Stile per il banner che invita a cliccare */
+/* Contenitore per la foto e il banner */
+#image-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Banner che invita a cliccare, centrato sopra la foto */
 #click-banner {
     position: absolute;
-    top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 2rem;
     font-weight: bold;
     background-color: #000;
@@ -77,8 +89,8 @@ body {
 
 /* Stile per la foto */
 #final-content img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
