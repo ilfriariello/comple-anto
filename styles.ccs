@@ -1,0 +1,118 @@
+/* Stile base del corpo */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Schermata di caricamento */
+#loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    z-index: 10;
+}
+
+/* Testo "LOADING..." */
+.loader p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Barra di caricamento */
+.progress-bar {
+    width: 200px;
+    height: 10px;
+    background: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 5px;
+}
+
+/* Contenuto finale */
+#final-content {
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease-in; /* Transizione di 2 secondi */
+}
+
+/* Stile per il banner che invita a cliccare */
+#click-banner {
+    position: absolute;
+    top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* Stile per la foto */
+#final-content img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Stile per il testo sotto la foto */
+#message {
+    margin-top: 20px; /* Distanza dalla foto */
+    font-size: 3rem; /* Aumenta la dimensione del testo */
+    text-align: center;
+    text-transform: uppercase; /* Maiuscole */
+    font-weight: bold;
+    opacity: 0; /* Inizialmente nascosto */
+    transition: opacity 1s ease-in-out; /* Transizione di 1 secondo */
+}
+
+/* Media query per schermi piccoli (mobile) */
+@media (max-width: 768px) {
+    #message {
+        font-size: 2rem; /* Riduce la dimensione del testo */
+        padding: 0 10px; /* Aggiunge un po' di spazio ai lati */
+    }
+
+    #final-content img {
+        max-width: 90%; /* Adatta la foto alla larghezza del dispositivo */
+    }
+
+    #click-banner {
+        font-size: 1.5rem; /* Riduce la dimensione del banner */
+    }
+}
+
+/* Animazione della barra di caricamento */
+@keyframes loadingProgress {
+    to {
+        width: 100%;
+    }
+}
